@@ -1,0 +1,94 @@
+<!doctype html>
+<!-- Bokeh4.py-->
+<html>
+<head>
+<style>
+div.table{
+    position: relative;
+    left: 200px;
+	text-align: middle;
+	text-transform: uppercase;
+	font-family: "Times New Roman", Times, serif;
+	
+	}
+h4{
+	border-collapse: collapse;
+	text-align: middle;
+    color: black;
+}
+div.bokeh{
+	
+	text-align: center;
+    text-transform: uppercase;
+    color: #4CAF50;
+}
+h1 {
+    text-align: center;
+    text-transform: uppercase;
+    color: #4CAF50;
+}
+h2{
+	text-align: left;
+    
+}
+h3{}
+p {
+    text-indent: 50px;
+    text-align: justify;
+    letter-spacing: 1px;
+}
+a {
+    text-decoration:none;
+    color: #008CBA;
+}
+body {
+    background-color: linen;
+	padding-right: 30px;
+}
+
+</style>
+ <title>eCPM_data</title>
+ <link rel=stylesheet type=text/css href="{{ url_for('static', filename='skeleton.css') }}">
+ <link rel="stylesheet" href="http://cdn.pydata.org/bokeh/release/bokeh-0.11.0.min.css" type="text/css" />
+ <script type="text/javascript" src="http://cdn.pydata.org/bokeh/release/bokeh-0.11.0.min.js"></script>
+ {{ figJS|safe }}
+
+ </head>
+<body>
+<title>eCPM_data</title>
+<img src="http://static1.squarespace.com/static/56b52ffa356fb0778ea2a041/t/56dce9d0746fb9f11426315b/1459803536335/?format=1500w" alt="HTML5 Icon" style="width:200px;height:50px;">
+
+
+<!--
+<div class='matplotlib'>
+ <img src="static/temp/{{plotPng}}">
+</div>
+-->
+<div class=page>
+  <h1>eCPM_data</h1>
+  
+
+</div>
+<div class='bokeh'>
+<h2>             Description                    </h2>
+<p> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. 
+Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. 
+Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. 
+Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. 
+Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, 
+sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem.
+</p>
+
+</div>
+<div class='table'>
+	{{ figDiv|safe }}
+    {% for table in tables %}
+    <h3>{{titles[loop.index]}}</h3>
+    <h4>{{ table|safe }}</h4>
+	{% endfor %}
+
+
+  
+</div>
+</body>
+</html>
